@@ -2057,7 +2057,7 @@ body{background:#fff;color:var(--text)}
   --text:#18181B;--text-2:#52525B;--muted:#A1A1AA;--line:#E4E4E7;--line-2:#D4D4D8;
   --cta:#27272A;--cta-h:#3F3F46;--cta-d:#18181B;
   --r-sm:6px;--r:8px;--r-lg:12px;
-  --wrap:1280px;--ann-h:36px;--nav-h:56px;
+  --wrap:1280px;--ann-h:72px;--nav-h:56px;
 }
 html{-webkit-font-smoothing:antialiased}
 body{font-family:var(--ui);font-size:14px;color:var(--text)}
@@ -2084,7 +2084,14 @@ em{font-style:normal}
 .link{font-weight:500}
 
 /* barra de anúncio + cabeçalho */
-.ann{height:var(--ann-h);background:#09090B;color:#fff;display:flex;align-items:center;justify-content:center;gap:8px;font-size:13px;font-weight:500;padding:0 16px;text-align:center}
+.ann{height:var(--ann-h);background:#09090B;color:#fff;display:flex;flex-direction:column;align-items:stretch;justify-content:center;font-size:13px;font-weight:500;padding:0;text-align:center}
+.ann > *{height:calc(var(--ann-h) / 2);display:flex;align-items:center;justify-content:center;gap:8px;padding:0 16px;min-width:0}
+/* aviso: projeto fictício */
+.ann-fic{background:#18181b;border-bottom:1px solid rgba(255,255,255,.1);font-size:12px;font-weight:400;color:#d4d4d8;letter-spacing:.005em}
+.ann-fic a{color:#fff;font-weight:500;text-decoration:underline;text-underline-offset:3px;text-decoration-color:rgba(255,255,255,.45);transition:text-decoration-color .3s}
+.ann-fic a:hover{text-decoration-color:#fff}
+.ann-fic .short{display:none}
+@media (max-width:620px){.ann-fic .long{display:none}.ann-fic .short{display:inline}}
 .ann a{display:inline-flex;gap:8px;align-items:center;color:#fff}
 .ann a:hover{text-decoration:underline;text-underline-offset:3px}
 .ann i{font-style:normal;color:#A1A1AA;font-weight:400}
@@ -2942,7 +2949,9 @@ section > .wrap,.sec > .wrap,.sh > .wrap,.hero > .wrap,.metrics > .wrap,section 
 <!-- ======================= HEADER ======================= -->
 <div class="page-loader" id="page-loader"></div>
 <header class="hdr" id="hdr">
-  <div class="ann"><a href="#/postflows"><span>Announcing Postflows</span><i>Branded tracking and delivery updates for every order</i></a></div>
+  <div class="ann">
+    <div class="ann-fic"><span><span class="long">Fictional project designed and developed by </span><span class="short">Fictional project by </span><a href="https://www.linkedin.com/in/lucasgava" target="_blank" rel="noopener">Lucas Gava</a></span></div>
+    <a href="#/postflows"><span>Announcing Postflows</span><i>Branded tracking and delivery updates for every order</i></a></div>
   <nav class="nav">
     <a href="#/" class="brand" aria-label="Nuwa home">
       <svg class="brand-mark" viewBox="0 0 26 26"><path class="m1" d="M6.5 3h6l-4.6 20h-6z"/><path d="M15.5 3h6l-4.6 20h-6z"/></svg>
@@ -3316,7 +3325,7 @@ section > .wrap,.sec > .wrap,.sh > .wrap,.hero > .wrap,.metrics > .wrap,section 
         <a href="#/partners">Nuwa Partner</a><a href="#/partners/paking-duck">Paking Duck</a><a href="#/partners/instant-commerce">Instant Commerce</a>
       </div>
     </div>
-    <div class="f-bottom"><span>© 2026 Nuwa</span><span>Built in China. Connected to the world.</span></div>
+    <div class="f-bottom"><span>© 2026 Nuwa · Fictional project by <a href="https://www.linkedin.com/in/lucasgava" target="_blank" rel="noopener" style="text-decoration:underline;text-underline-offset:3px">Lucas Gava</a></span><span>Built in China. Connected to the world.</span></div>
   </div>
 </footer>
 
